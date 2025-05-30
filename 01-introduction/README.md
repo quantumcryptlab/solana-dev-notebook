@@ -1,106 +1,74 @@
-# Introduction to Solana Development
+# Solana Fundamentals
 
-This tutorial covers the fundamentals of Solana blockchain development and helps you set up your development environment.
+This document covers the fundamental concepts of Solana blockchain development.
 
-## Learning Objectives
+## Network Types
 
-- Understand Solana's core concepts
-- Set up your development environment
-- Create your first Solana program
-- Learn about Solana's programming model
+- **Mainnet**: The main Solana network where real transactions occur
+- **Devnet**: Development network for testing with free SOL tokens
+- **Testnet**: Test network for final testing before mainnet deployment
 
-## Prerequisites
+## Key Concepts
 
-Before starting this tutorial, make sure you have:
-- Basic understanding of blockchain concepts
-- Familiarity with JavaScript/TypeScript
-- Basic command line knowledge
+### Accounts and Tokens
 
-## Development Environment Setup
+- **Token Account**: An account that holds specific token balances
+- **Mint Account**: The account that controls token creation and supply
+- **Token 2022**: Upgraded token standard with enhanced features
+- **Associated Token Account (ATA)**: 
+  - A unique account created for each token type a user owns
+  - Requires SOL for rent payment
+  - Can be closed to reclaim rent when no longer needed
 
-1. Install Node.js (v14 or later)
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install 14
-nvm use 14
-```
+### Program Derived Address (PDA)
+- Addresses without private keys
+- Used for:
+  - Program authority over other accounts
+  - Signing transactions
+  - Data storage
+- Deterministically generated from seeds
 
-2. Install Rust
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+### Currency Units
+- **Lamports**: Smallest unit of SOL (like wei in Ethereum)
+- 1 SOL = 1,000,000,000 lamports
 
-3. Install Solana CLI
-```bash
-sh -c "$(curl -sSfL https://release.solana.com/v1.17.0/install)"
-```
+### Transaction Fees
+- **Priority Fees**: 
+  - Additional SOL paid to validators
+  - Higher fees = faster transaction processing
+  - Dynamic based on network congestion
 
-4. Install Anchor Framework
-```bash
-cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
-avm install latest
-avm use latest
-```
+### Account Rent
+- SOL payment required for storing data/code on-chain
+- Based on account size
+- Can be reclaimed by closing the account
+- Rent-exempt accounts possible with sufficient SOL deposit
 
-## Solana Core Concepts
+## Development Tools
+- Solana CLI
+- Anchor Framework
+- Rust Programming Language
+- Web3.js/TypeScript SDK
 
-### 1. Account Model
-- Accounts are like files in a filesystem
-- All data is stored in accounts
-- Accounts can store both data and programs
+## Common Operations
+- Account Creation
+- Token Management
+- Program Deployment
+- Cross-Program Invocation (CPI)
+- Transaction Signing
+- State Management
 
-### 2. Programs (Smart Contracts)
-- Programs are stateless
-- They can read and write to accounts
-- Programs are stored in accounts marked as executable
+## Best Practices
+- Always check account ownership
+- Validate all inputs
+- Handle rent collection properly
+- Use PDAs for program-controlled accounts
+- Implement proper error handling
+- Follow security guidelines
 
-### 3. Transactions
-- Atomic operations
-- Can contain multiple instructions
-- All instructions must succeed for the transaction to succeed
-
-## Your First Solana Program
-
-The `code` directory contains a simple "Hello World" program that demonstrates:
-- Creating a basic Solana program
-- Building and deploying to a local testnet
-- Interacting with the program using JavaScript
-
-### Running the Program
-
-1. Navigate to the code directory:
-```bash
-cd code
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Build the Rust program:
-```bash
-anchor build
-```
-
-4. Start a local test validator (in a new terminal):
-```bash
-solana-test-validator
-```
-
-5. Run the tests:
-```bash
-anchor test
-```
-
-The test will deploy the program to your local testnet and execute a transaction that prints "Hello, World!" to the program log.
-
-## Next Steps
-
-After completing this tutorial, you'll be ready to move on to [Accounts & Programs](../02-account-program) where you'll learn more about Solana's account system and how to create more complex programs.
-
-## Additional Resources
-
-- [Official Solana Documentation](https://docs.solana.com)
+## Resources
+- [Solana Documentation](https://docs.solana.com)
+- [Anchor Framework Docs](https://www.anchor-lang.com)
 - [Solana Cookbook](https://solanacookbook.com)
-- [Anchor Book](https://book.anchor-lang.com) 
+- [Token Program](https://spl.solana.com/token)
+
