@@ -42,13 +42,40 @@ This document covers the fundamental concepts of Solana blockchain development.
 - SOL payment required for storing data/code on-chain
 - Based on account size
 - Can be reclaimed by closing the account
-- Rent-exempt accounts possible with sufficient SOL deposit
+- **Rent Exemption**:
+  - Pay two years of rent upfront to become rent-exempt
+  - Account can be used indefinitely without further rent payments
+  - Minimum rent threshold depends on account size
+  - Required for all new accounts
+
+### Solana Architecture
+- **Code and Data Separation**:
+  - Unlike Ethereum, Solana separates program code from account data
+  - Improves scalability but increases development complexity
+  - Programs are stateless, data is stored in accounts
+
+### Token Creation and Management
+- Two main approaches:
+  - Using Solana CLI and SPL Token program in terminal
+  - Using Metaplex.js library
+- Token Authorities:
+  - Freeze Authority: Can freeze token accounts
+  - Mint Authority: Controls token supply (minting)
 
 ## Development Tools
+
+### Essential Tools
 - Solana CLI
 - Anchor Framework
 - Rust Programming Language
 - Web3.js/TypeScript SDK
+
+### Wallets
+- **Phantom Wallet**: Popular browser extension wallet for Solana
+
+### Free RPC Providers
+- Helius: www.helius.dev
+- Public Node: scana.publicnode.com
 
 ## Common Operations
 - Account Creation
@@ -71,4 +98,6 @@ This document covers the fundamental concepts of Solana blockchain development.
 - [Anchor Framework Docs](https://www.anchor-lang.com)
 - [Solana Cookbook](https://solanacookbook.com)
 - [Token Program](https://spl.solana.com/token)
+- [Helius Dev Portal](https://www.helius.dev)
+- [Phantom Wallet](https://phantom.app)
 
