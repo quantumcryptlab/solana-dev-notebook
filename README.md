@@ -4,10 +4,9 @@ A comprehensive series of tutorials for Solana blockchain development, covering 
 
 ## Course Contents
 
-1. [Introduction](./01-introduction) - Solana fundamentals and development environment setup
-2. [Accounts & Programs](./02-account-program) - Understanding and working with Solana accounts
-3. [Token Development](./03-tokens) - Creating and managing SPL tokens
-4. [NFT Development](./04-nft) - Creating and managing NFTs on Solana
+1. [Introduction](./01-introduction) - Getting started with Solana development
+2. [Solana Playground](./02-playground) - Using Solana's browser-based IDE
+3. [Rust Basics](./03-rust-basics) - Essential Rust programming concepts for Solana development
 
 ## Prerequisites
 
